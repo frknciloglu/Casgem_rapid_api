@@ -1,0 +1,35 @@
+﻿@model List<LocationCityNameViewModel>
+@{
+    Layout = null;
+    int a = 0;
+}
+<link href="~/lib/bootstrap/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/dist/css/bootstrap.rtl.css" rel="stylesheet" />
+<form method="get">
+
+    <div class="container">
+        <div class="d-flex flex-column justify-content-center align-content-center vh-100 m-auto " style="max-width:250px">
+            <label class="text-center">Şehir Adını Giriniz</label>
+            <input type="text" name="cityname" />
+            <br />
+            <button class="btn btn-warning">Şehir Id Getir</button>
+            <table class="table table-hover mt-2">
+                @foreach (var item in Model)
+                {
+
+                    <tr>
+                        <td class="text-center d-flex justify-content-between" style="font-weight:bold">
+                            <p>@item.city_name</p>
+                            <p>
+                                @item.dest_id
+                            </p>
+                        </td>
+                    </tr>
+
+
+                }
+            </table>
+        </div>
+
+    </div>
+</form>
